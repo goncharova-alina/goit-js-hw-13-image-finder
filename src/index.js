@@ -8,24 +8,24 @@ refs.form.addEventListener('submit', event => {
     event.preventDefault();
 
     const formInput = event.currentTarget;
-    apiService.searchQuery = formInput.elements.query.value;
+    apiService.query = formInput.elements.query.value;
 
     refs.gallery.innerHTML = '';
-    formInput.reset();
+    apiService.resetPage();
 
-    apiService.page = 1;
+    // apiService.page = 1;
 
-    apiService.fetchImages(searchQuery, page).then(hits => { 
+    apiService.fetchImages().then(hits => { 
         updateGalleryMarkup(hits);
-        page += 1;
+      
     })
 } );
 
 refs.button.addEventListener('click' , () => {
    
-    apiService.fetchImages(searchQuery, page).then(hits => { 
+    apiService.fetchImages().then(hits => { 
         updateGalleryMarkup(hits);
-        page += 1;
+        
     });
 });
 
