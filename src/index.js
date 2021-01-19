@@ -13,19 +13,24 @@ refs.form.addEventListener('submit', event => {
     refs.gallery.innerHTML = '';
     apiService.resetPage();
 
-    // apiService.page = 1;
+    refs.button.classList.add('is-hidden');
 
     apiService.fetchImages().then(hits => { 
         updateGalleryMarkup(hits);
-      
+        refs.button.classList.remove('is-hidden');
     })
-} );
+    formInput.reset();
+});
 
 refs.button.addEventListener('click' , () => {
    
     apiService.fetchImages().then(hits => { 
         updateGalleryMarkup(hits);
         
+        window.scrollBy({
+            top: window.innerHeight,
+            left: 0,
+            behavior: 'smooth'});
     });
 });
 
