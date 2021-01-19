@@ -35,12 +35,10 @@ img {
   width: 1600px;
 }
 
-  
 .section {
   padding-top: 60px;
   padding-bottom: 60px;
 }
-
 .load-more-button {
   display: block;
   margin: 0 auto;
@@ -57,7 +55,6 @@ img {
 .load-more-button.is-hidden {
   display: none;
 }
-
 .search-form {
   margin-left: auto;
   margin-right: auto;
@@ -78,14 +75,14 @@ img {
   line-height: 1;
 }
 
-
 .gallery {
   margin-bottom: 30px;
 }
 
 .gallery-item:not(:last-child) {
   margin-bottom: 30px;
-}
+} 
+
 
 .photo-card-image {
   margin: 0 auto;
